@@ -1,4 +1,4 @@
-#!/bin/bash
+
 Flask
 Redis
-PACKAGE_MANIFEST
+
