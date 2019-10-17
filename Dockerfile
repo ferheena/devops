@@ -1,4 +1,4 @@
-ROM python:2.7
+FROM python:2.7
 
 WORKDIR /app
 
