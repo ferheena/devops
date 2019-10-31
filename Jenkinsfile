@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('SCMCHECKOUT') {
             steps {
-                git credentialsId: 'jenkins', url: 'https://github.com/ferheena/devops.git'
+                checkout scm
             }
         }
         stage('compile code') {
