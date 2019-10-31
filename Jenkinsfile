@@ -22,7 +22,7 @@ pipeline {
         }
         stage ('sonarAnyalysis') {
             steps {
-                sh "/opt/sonarscanner/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner -Dsonar.host.url=http://34.93.49.84:9000 -Dsonar.projectName=saas -Dsonar.projectVersion=1.0 -Dsonar.projectKey=saas -Dsonar.sources=. -Dsonar.projectBaseDir=/var/lib/jenkins/workspace/$JOB_NAME -Dsonar.python.coveragePlugin=cobertura -Dsonar.python.pylint=/usr/local/bin/pylint -Dsonar.python.pylint.reportPath=pylint-report.txt -Dsonar.python.coverage.reportPath=.coveragexml"
+                sh "/opt/sonarscanner/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner -Dsonar.host.url=http://34.93.49.84:9000 -Dsonar.projectName=saas -Dsonar.projectVersion=1.0 -Dsonar.projectKey=saas -Dsonar.sources=. -Dsonar.projectBaseDir=/var/lib/jenkins/workspace/$JOB_NAME/master -Dsonar.python.coveragePlugin=cobertura -Dsonar.python.pylint=/usr/local/bin/pylint -Dsonar.python.pylint.reportPath=pylint-report.txt -Dsonar.python.coverage.reportPath=.coveragexml"
             }
         }
         stage('Building image') {
