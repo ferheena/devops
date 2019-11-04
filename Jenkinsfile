@@ -22,12 +22,12 @@ pipeline {
         }
         stage ('sonarAnyalysis') {
             steps {
-                sh "/opt/sonarscanner/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner -Dsonar.host.url=http://34.93.49.84:9000 -Dsonar.projectName=saas12 -Dsonar.projectVersion=1.0 -Dsonar.projectKey=saas12 -Dsonar.sources=. -Dsonar.projectBaseDir=/var/lib/jenkins/workspace/saas_master -Dsonar.python.coveragePlugin=cobertura -Dsonar.python.pylint=/usr/local/bin/pylint -Dsonar.python.pylint.reportPath=pylint-report.txt -Dsonar.python.coverage.reportPath=/var/lib/jenkins/workspace/multi_branch_master/coverage-reports/*coverage-*.xml"
+                sh "/opt/sonarscanner/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner -Dsonar.host.url=http://34.93.49.84:9000 -Dsonar.projectName=saas12 -Dsonar.projectVersion=1.0 -Dsonar.projectKey=saas12 -Dsonar.sources=. -Dsonar.projectBaseDir=/var/lib/jenkins/workspace/saas_master -Dsonar.python.coveragePlugin=cobertura -Dsonar.python.pylint=/usr/local/bin/pylint -Dsonar.python.pylint.reportPath=pylint-report.txt -Dsonar.python.coverage.reportPath=/var/lib/jenkins/workspace/mulcoverage-ti_branch_master/coverage-reports/*coverage-*.xml -Dsonar.python.xunit.reportPath=xunit-reports/xunit-result-*.xml"
             }
         }
         stage('Building image') {
             steps {
-                sh'docker build -t ferheena/dockerkhan:seven .'
+                sh'docker build -t ferheena/dockerkhan:eight .'
             }
         }
         stage ('Build Push') {
@@ -35,7 +35,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'password1', variable: 'ff')]) {
                     sh"docker login -u ferheena -p ${ff}"
                 }
-                sh'docker push ferheena/dockerkhan:seven'
+                sh'docker push ferheena/dockerkhan:eight'
             }
         }
     }
