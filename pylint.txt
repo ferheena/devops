@@ -1,0 +1,12 @@
+************* Module app.__init__
+app/__init__.py:5: [C0303(trailing-whitespace), ] Trailing whitespace
+app/__init__.py:7: [C0303(trailing-whitespace), ] Trailing whitespace
+************* Module app
+app/__init__.py:1: [C0111(missing-docstring), ] Missing module docstring
+app/__init__.py:6: [C0103(invalid-name), ] Constant name "app" doesn't conform to UPPER_CASE naming style
+app/__init__.py:10: [C0111(missing-docstring), hello] Missing function docstring
+app/__init__.py:4: [C0411(wrong-import-order), ] standard import "import socket" should be placed before "from flask import Flask"
+
+------------------------------------------------------------------
+Your code has been rated at 1.43/10 (previous run: 1.43/10, +0.00)
+
