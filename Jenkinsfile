@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Building image') {
             steps {
-                sh'docker build -t ferheena/dockerkhan:ten .'
+                sh'docker build -t ferheena/dockerkhan:two .'
             }
         }
         stage ('Build Push') {
@@ -35,7 +35,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'password1', variable: 'ff')]) {
                     sh"docker login -u ferheena -p ${ff}"
                 }
-                sh'docker push ferheena/dockerkhan:ten'
+                sh'docker push ferheena/dockerkhan:two'
             }
         }
     }
