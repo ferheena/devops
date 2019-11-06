@@ -1,4 +1,6 @@
 # ensure contains the following:
+import sys
+sys.path.append('/opt/dd/devops/app')
 import pytest
 from app import *
     
